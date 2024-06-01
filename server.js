@@ -1,9 +1,16 @@
 // server.js
 const fastify = require('fastify')({ logger: true });
+const { currentDate } = require('./utils');
 
-// Declare a route
+// Existing "Hello World" route
 fastify.get('/', async (request, reply) => {
   return { message: 'Hello World' };
+});
+
+// New route to get the current date
+fastify.get('/current-date', async (request, reply) => {
+  const date = currentDate();
+  return { currentDate: date };
 });
 
 // Run the server!
