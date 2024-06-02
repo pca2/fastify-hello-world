@@ -28,6 +28,8 @@ describe('Fastify server routes', () => {
     const responseData = response.json();
     expect(responseData).toHaveProperty('currentDate');
     // Check if the returned date is in ISO format
-    expect(new Date(responseData.currentDate).toISOString()).toBe(responseData.currentDate);
+    expect(new Date(responseData.currentDate).toISOString()).toBe(
+      responseData.currentDate
+    );
   });
 });
